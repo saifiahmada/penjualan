@@ -1,0 +1,13 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.StokMasukVM')">
+		<div sclass="page-header">
+			<label value="Stok Masuk" />
+		</div>
+
+		
+	</vlayout>
+
+</zk>

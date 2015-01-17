@@ -1,0 +1,70 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MstHargaVM')">
+		<div sclass="page-header">
+			<label value="Master Harga" />
+		</div>
+		<vbox>
+			<hbox align="center">
+				
+				<textbox value="@bind(vm.current.kdItem)" placeholder="Kd Item" width="150px"
+					sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('pilihData')"
+				sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />	
+			</hbox>
+
+			<hbox align="center">
+				<intbox value="@bind(vm.current.hrgKsg)" placeholder="Harga Kosongan" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox>
+			
+			<hbox align="center">
+				<intbox value="@bind(vm.current.bbn)" placeholder="BBN" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox>
+			
+			<hbox align="center">
+				<intbox value="@bind(vm.current.hrgKmp)" placeholder="Harga Komplit" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox>
+			
+			
+			<separator />
+			<hbox align="center">
+				<button label="Simpan" onClick="@command('simpan')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+				<button label="Cari" onClick="@command('cari')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-search" />
+			</hbox>
+		</vbox>
+
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader label="Kode Item" sort="auto(kdItem)" />
+				<listheader label="Harga Kosongan" sort="auto(hrgKsg)" />
+				<listheader label="BBN" sort="auto(bbn)" />
+				<listheader label="Harga Komplit" sort="auto(hrgKmp)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.kdItem)"/>
+					<listcell label="@load(p1.hrgKsg) @converter('formatedNumber', format='###,##0.00')" style="text-align: right"  />
+					<listcell label="@load(p1.bbn) @converter('formatedNumber', format='###,##0.00')" style="text-align: right"  />
+					<listcell label="@load(p1.hrgKmp) @converter('formatedNumber', format='###,##0.00') " style="text-align: right"   />
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>

@@ -1,0 +1,11 @@
+<window apply="com.trio.dashboard.viewmodel.StatusPKB2VM">
+
+	<panel border="none" collapsible="true" sclass="transparent">
+		<caption iconSclass="z-icon-star orange"
+			label="Pendapatan Harian Bengkel Database Cabang" />
+		<panelchildren>
+			<separator />
+			<charts id="chart" type="column" title="Status PKB" />
+		</panelchildren>
+	</panel>
+</window>

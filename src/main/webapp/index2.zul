@@ -1,0 +1,14 @@
+<zk>
+	<iframe id="iframe" src="http://www.zkoss.org" vflex="1" width="100%"
+		style="border: 1px solid gray" />
+	<separator bar="true" if="true" />
+	<hbox if="true">
+	<button upload="true" label="show data in iframe">
+		<attribute name="onUpload">{
+		Object media =  event.getMedia();
+		if (media != null)
+			iframe.setContent(media);
+		}</attribute>
+	</button>
+	</hbox>
+</zk>

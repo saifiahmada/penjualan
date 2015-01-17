@@ -1,0 +1,73 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MstUserVM')">
+		<div sclass="page-header">
+			<label value="Maintain User" />
+		</div>
+
+		<vbox>
+			<hbox align="center">
+				<textbox value="@bind(vm.current.vusername)" placeholder="Username"
+					sclass="form-control" />
+			</hbox>
+
+			<hbox align="center">
+				<textbox type="password" value="@bind(vm.current.vpassword)" placeholder="Password"
+					sclass="form-control" />
+			</hbox>
+			
+			<hbox align="center">
+				<textbox type="password" value="@bind(vm.password2)" placeholder="Confirm Password"
+					sclass="form-control" />
+			</hbox>
+
+			<hbox align="center">
+				<cell width="100px">
+					<label value="Status" />
+				</cell>
+
+				<radiogroup selectedItem="@bind(vm.current.vstat)">
+					<radio value="T" label="Aktif" />
+					<space />
+					<radio value="F" label="Tidak Aktif" />
+				</radiogroup>
+			</hbox>
+			<separator />
+			<hbox align="center">
+				<button label="Simpan" onClick="@command('simpan')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+				<button label="Cari" onClick="@command('cari')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-search" />
+				
+				
+			</hbox>
+		</vbox>
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader width="100px" label="Username"
+					sort="auto(username)" />
+				<listheader label="Status" sort="auto(vstat)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.vusername)" />
+					<listcell
+						label="@load(p1.vstat eq 'T' ? 'Aktif' : 'Tidak Aktif')" />
+						
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>

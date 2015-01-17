@@ -1,0 +1,5 @@
+<window apply="com.trio.dashboard.viewmodel.HarianVM">
+	<charts id="chart" type="column" margin="50, 50, 100, 80"
+		title="Unit Entry" />
+</window>
+

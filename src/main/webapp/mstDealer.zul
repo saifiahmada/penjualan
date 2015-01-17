@@ -1,0 +1,84 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MstDealerVM')">
+		<div sclass="page-header">
+			<label value="Maintain Dealer" />
+		</div>
+
+		<vbox>
+			<hbox align="center">
+				
+				<textbox value="@bind(vm.current.id)" placeholder="Id"
+					sclass="form-control" />
+			</hbox>
+
+			<hbox align="center">
+				<textbox value="@bind(vm.current.namaDealer)" placeholder="Nama"
+					sclass="form-control" />
+			</hbox>
+			
+			<hbox align="center">
+				<textbox value="@bind(vm.current.alamat)" placeholder="Alamat"
+					sclass="form-control" />
+			</hbox>
+			
+			<hbox align="center">
+				<textbox value="@bind(vm.current.telpon)" placeholder="Telpon"
+					sclass="form-control" />
+			</hbox>
+			
+			<hbox align="center">
+				<textbox value="@bind(vm.current.pimpinan)" placeholder="Pimpinan"
+					sclass="form-control" />
+			</hbox>
+			
+			<hbox align="center">
+				<textbox value="@bind(vm.current.npwp)" placeholder="NPWP"
+					sclass="form-control" />
+			</hbox>
+			
+			<separator />
+			<hbox align="center">
+				<button label="Simpan" onClick="@command('simpan')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+				<button label="Cari" onClick="@command('cari')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-search" />
+				
+				
+			</hbox>
+		</vbox>
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader width="100px" label="Id"
+					sort="auto(id)" />
+				<listheader label="Nama" sort="auto(namaDealer)" />
+				<listheader label="Alamat" sort="auto(alamat)" />
+				<listheader label="Telpon" sort="auto(telpon)" />
+				<listheader label="Pimpinan" sort="auto(pimpinan)" />
+				<listheader label="No NPWP" sort="auto(npwp)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.id)" />
+					<listcell label="@load(p1.namaDealer)" />
+					<listcell label="@load(p1.alamat)" />
+					<listcell label="@load(p1.telpon)" />
+					<listcell label="@load(p1.pimpinan)" />
+					<listcell label="@load(p1.npwp)" />
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>

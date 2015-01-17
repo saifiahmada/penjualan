@@ -1,0 +1,60 @@
+<vlayout sclass="page-content" xmlns:n="native" spacing="0">
+
+	<vlayout apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.trio.dashboard.viewmodel.BedaTanggalNotaVM')">
+
+		<panel border="none" collapsible="true" sclass="transparent">
+			<caption iconSclass="z-icon-star orange"
+				label="Tgl Nota vs Tgl Crea" />
+			<panelchildren>
+				<separator />
+				<hbox align="center">
+					<cell width="100px">
+						<label value="Cabang" />
+					</cell>
+					<combobox width="170px" model="@load(vm.cabangs)"
+						value="@bind(vm.cabang.nama)" selectedItem="@bind(vm.cabang)"
+						onSelect="@command('pilihCabang')" readonly="true">
+						<template name="model" var="p1">
+							<comboitem label="@load(p1.nama)"
+								value="@load(p1.nama)" description="@load(p1.nama)" />
+						</template>
+					</combobox>
+					<button label="Send" onClick="@command('submit')"
+						iconSclass="z-icon-mail-forward" sclass="btn btn-sm btn-info" />
+				</hbox>
+
+				<separator />
+				<listbox id="lb" sclass="task" mold="paging"
+					pageSize="20" pagingPosition="both" model="@load(vm.listModel)">
+					<listhead sizable="true">
+
+						<listheader label="Tgl Nota" />
+						<listheader label="Tgl Crea"
+							style="text-align: right;" />
+						<listheader label="Nota"
+							style="text-align: right;" />
+						<listheader label="Jumlah"
+							style="text-align: right;" />
+
+					</listhead>
+					<template name="model" var="p1">
+						<listitem sclass="task-green">
+							<listcell label="@load(p1.tglNota)"
+								style="text-align: right;" />
+							<listcell label="@load(p1.tglCrea)"
+								style="text-align: right;" />
+							<listcell label="@load(p1.nota)"
+								style="text-align: right;" />
+							<listcell
+								label="@load(p1.jumlah) @converter('formatedNumber', format='###,##0.00')"
+								style="text-align: right;" />
+
+						</listitem>
+					</template>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</vlayout>
+
+</vlayout>

@@ -1,0 +1,21 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.CetakPickingVM')">
+		<div sclass="page-header">
+			<label value="Cetak DO" />
+		</div>
+		
+		<vbox>
+			<hbox><textbox placeholder="No Picking" value="@bind(vm.noPicking)" sclass="form-control" />
+				
+			</hbox>
+			<hbox><button label="Cetak" onClick="@command('cetakPicking')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" /></hbox>
+		</vbox>
+		
+	</vlayout>
+
+</zk>

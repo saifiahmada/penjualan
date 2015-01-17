@@ -1,0 +1,63 @@
+<vlayout sclass="page-content" xmlns:n="native" spacing="0">
+
+	<vlayout apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.PageVM')">
+
+		<panel border="none" collapsible="true" sclass="transparent">
+			<caption iconSclass="z-icon-star orange"
+				label="Selamat datang di Trio Motor" />
+			<panelchildren>
+				<separator />
+				<separator />
+				<vbox align="center">
+					<hbox align="center">
+						<cell width="300px" />
+						<a href="/uploadPoDealer.zul">
+							<image src="assets/avatars/satu.png"
+								width="172px" height="169px" />
+						</a>
+						<a href="/approveDo.zul">
+							<image src="assets/avatars/dua.png"
+								width="196px" height="169px" />
+						</a>
+						<a href="/prosesPicking.zul">
+							<image src="assets/avatars/tiga.png"
+								width="182px" height="169px" />
+						</a>
+					</hbox>
+					
+					<hbox align="center">
+						<cell width="300px" />
+						<a href="/#">
+							<image src="assets/avatars/empat.png"
+								width="172px" height="217px" />
+						</a>
+						<a href="/fakturPenjualan.zul">
+							<image src="assets/avatars/lima.png"
+								width="196px" height="217px" />
+						</a>
+						<a href="/suratJalan.zul">
+							<image src="assets/avatars/enam.png"
+								width="182px" height="217px" />
+						</a>
+					</hbox>
+					
+					<separator />
+					<separator />
+					<separator />
+					<separator />
+					<separator />
+				</vbox>
+			</panelchildren>
+		</panel>
+		<separator />
+		<separator />
+		<separator />
+		<separator />
+		<separator />
+		<separator />
+		<separator />
+		<separator />
+	</vlayout>
+
+</vlayout>

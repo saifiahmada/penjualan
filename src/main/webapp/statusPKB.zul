@@ -1,0 +1,30 @@
+<window id="win" apply="com.trio.dashboard.viewmodel.StatusPKBVM">
+
+	<panel border="none" collapsible="true" sclass="transparent">
+		<caption iconSclass="z-icon-star orange"
+			label="Pendapatan Harian Bengkel Database Cabang" />
+		<panelchildren>
+			
+			<separator />
+			<hbox>
+				<cell width="100px"/>
+				<cell width="150px">
+				<checkbox id="cbSemua" label="Tampilkan Semua" />
+				</cell>
+				<cell width="100px">
+					<label id="label1" value="Tanggal Awal" />
+				</cell>
+				<datebox id="tanggal" format="dd-MMM-yyyy" /> 
+				<cell width="100px">
+					<label id="label2" value="Tanggal Akhir" />
+				</cell>
+				<datebox id="tanggal2" format="dd-MMM-yyyy"  />
+				<button id="btnSend" label="Send"
+					iconSclass="z-icon-mail-forward" sclass="btn btn-sm btn-info" />
+			</hbox>
+			<separator />
+			<charts id="chart" type="column" title="Status PKB" />
+		</panelchildren>
+	</panel>
+</window>
+

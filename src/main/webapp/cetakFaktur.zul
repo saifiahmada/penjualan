@@ -1,0 +1,20 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.CetakFakturVM')">
+		<div sclass="page-header">
+			<label value="Cetak Faktur" />
+		</div>
+		
+		<vbox>
+			<hbox><textbox placeholder="No Faktur" value="@bind(vm.noFaktur)" sclass="form-control" />
+			</hbox>
+			<hbox><button label="Cetak" onClick="@command('cetakFaktur')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" /></hbox>
+		</vbox>
+		
+	</vlayout>
+
+</zk>

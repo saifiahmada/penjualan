@@ -1,0 +1,80 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.PendapatanVM')">
+		<div sclass="page-header">
+			<label value="Pendapatan" />
+		</div>
+		<vbox>
+			<!-- <hbox align="center">
+				
+				<textbox value="@bind(vm.current.noMesin)" placeholder="No Mesin" width="150px"
+					sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('pilihData')"
+				sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />	
+			</hbox> -->
+
+			<hbox align="center">
+				<textbox value="@bind(vm.kdItem)" placeholder="Kode Item" width="150px"
+					sclass="form-control"  />
+			</hbox>
+			
+			<!-- <hbox align="center">
+				<intbox value="@bind(vm.current.hargaBeli)" placeholder="Harga Beli" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox>
+			
+			<hbox align="center">
+				<intbox value="@bind(vm.current.hargaJual)" placeholder="Harga Jual" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox>
+			
+			<hbox align="center">
+				<intbox value="@bind(vm.current.untung)" placeholder="Untung" width="150px"
+					sclass="form-control" format="#,##0" />
+			</hbox> -->
+			
+			
+			<separator />
+			<hbox align="center">
+				<!-- <button label="Simpan" onClick="@command('simpan')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-floppy-disk" /> -->
+				<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+				<button label="Cari" onClick="@command('cari')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-search" />
+				<button label="Cetak" onClick="@command('cetakPendapatan')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" />	
+			</hbox>
+		</vbox>
+
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader label="No mesin" sort="auto(noMesin)" />
+				<listheader label="Kode Item" sort="auto(kdItem)" />
+				<listheader label="Harga Beli" sort="auto(hargaBeli)" />
+				<listheader label="Harga Jual" sort="auto(hargaJual)" />
+				<listheader label="Untung" sort="auto(untung)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.noMesin)"/>
+					<listcell label="@load(p1.kdItem)"/>
+					<listcell label="@load(p1.hargaBeli) @converter('formatedNumber', format='###,##0.00')" style="text-align: right"  />
+					<listcell label="@load(p1.hargaJual) @converter('formatedNumber', format='###,##0.00') " style="text-align: right"   />
+					<listcell label="@load(p1.untung) @converter('formatedNumber', format='###,##0.00') " style="text-align: right"   />
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>

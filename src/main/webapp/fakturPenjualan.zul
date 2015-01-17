@@ -1,0 +1,35 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.FakturPenjualanVM')">
+		<div sclass="page-header">
+			<label value="Faktur Penjualan" />
+		</div>
+		
+		<vbox>
+			<hbox>
+				<textbox placeholder="Kode Dealer"
+					value="@bind(vm.kdDealer)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovDealer')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox><textbox placeholder="No DO" value="@bind(vm.noDo)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovPilihDO')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox><textbox placeholder="No Faktur" value="@bind(vm.noFaktur)" sclass="form-control" readonly="true" />
+			</hbox>
+			<separator/>
+			<hbox><button label="Proses" onClick="@command('prosesFaktur')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Cetak" onClick="@command('cetakFaktur')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-print" />
+				</hbox>
+		</vbox>
+		
+	</vlayout>
+
+</zk>

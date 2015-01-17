@@ -1,0 +1,23 @@
+<panel border="normal" sclass="traffic">
+  <caption iconSclass="z-icon-signal" label="Traffic Sources" sclass="small">
+    <button label="This Week" sclass="btn btn-minier btn-primary pull-right" 
+      popup="datepp, position=after_end, type=toggle"/>
+    <popup id="datepp" width="125px" sclass="date">
+      <listbox>
+          <listitem label="This Week" selected="true"/>
+          <listitem label="Last Week"/>
+          <listitem label="This Month"/>
+          <listitem label="Last Month"/>
+      </listbox>
+    </popup>
+  </caption>
+  <panelchildren>
+    <vlayout apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('vm') @init('com.trio.dashboard.viewmodel.BarChartVM')">
+    <chart id="mybarchart" width="520" height="400"
+        fgAlpha="255" paneColor="#ffffff" bgColor="#ffffff" type="bar"
+        orient="horizontal"
+        model="@bind(vm.model)" />
+</vlayout>
+  </panelchildren>
+</panel>

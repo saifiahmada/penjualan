@@ -1,0 +1,67 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.ApproveDOVM')">
+		<div sclass="page-header">
+			<label value="Approve DO" />
+		</div>
+		<hbox>
+			<textbox value="@bind(vm.kdDealer)" readonly="true"
+				placeholder="Kode Dealer" sclass="form-control" width="150px" />
+			<button label="LOV" onClick="@command('lovPilihDealer')"
+				sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+		</hbox>
+		<separator />
+		<hbox>
+			<textbox value="@bind(vm.noPo)" placeholder="No PO"
+				readonly="true" sclass="form-control" width="150px" />
+			<button label="LOV" onClick="@command('lovPilihPO')"
+				sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+		</hbox>
+		<separator/>
+		<hbox>
+			<textbox value="@bind(vm.noDo)" readonly="true"
+				placeholder="NO DO" sclass="form-control" width="150px" />
+		</hbox>
+		<separator />
+		<listbox width="500px" mold="paging" pageSize="10"
+			pagingPosition="both" selectedItem="@bind(vm.current)"
+			model="@load(vm.listModel)" sclass="mylist">
+			<listhead sizable="true">
+				<listheader width="100px" label="Kd Item"
+					sort="auto(dtlPoPK.kdItem)" />
+				<listheader label="Qty" sort="auto(qty)" />
+				<listheader label="Cek Stok" />
+				<listheader label="Qty Approve" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.dtlPoPK.kdItem)" />
+					<listcell label="@load(p1.qty)" />
+					<listcell>
+						<button label="Cek Stok"
+							onClick="@command('cek', picked=p1)" sclass="btn-info"
+							zclass="btn" iconSclass="glyphicon glyphicon-repeat" />
+					</listcell>
+					<listcell label="@bind(p1.qtyApp)" />
+				</listitem>
+			</template>
+		</listbox>
+		<separator />
+		<hbox>
+			<button label="Simpan" onClick="@command('simpan')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" />
+			<button label="Reset" onClick="@command('reset')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-repeat" />
+			<button label="Cetak" onClick="@command('cetakDO')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-print" />
+
+		</hbox>
+
+	</vlayout>
+
+</zk>

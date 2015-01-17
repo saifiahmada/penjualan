@@ -1,0 +1,20 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.UploadPoDealerVM')">
+		<div sclass="page-header">
+			<label value="Upload PO" />
+		</div>
+
+		<vbox>
+			<hbox>
+				<fileupload label="Upload" native="true"
+							onUpload="@command('getUploadedFile', media=event.media)" upload="true" />
+			</hbox>
+		</vbox>
+		
+		
+	</vlayout>
+
+</zk>

@@ -1,0 +1,46 @@
+<vlayout sclass="page-content" xmlns:n="native" spacing="0">
+
+	<vlayout apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.trio.dashboard.viewmodel.SinkronisasiVM')">
+
+		<panel border="none" collapsible="true" sclass="transparent">
+			<caption iconSclass="z-icon-star orange"
+				label="Sinkronisasi Database Cabang" />
+			<panelchildren>
+				<grid sclass="domain">
+					<columns>
+						<column label="Kode"
+							iconSclass="z-icon-caret-right blue" />
+						<column label="Cabang"
+							iconSclass="z-icon-caret-right blue" />
+						<column label="Tanggal"
+							iconSclass="z-icon-caret-right blue" />
+					</columns>
+					
+				</grid>
+				<listbox id="lb" sclass="task" mold="paging" pageSize="20"
+					pagingPosition="both" 
+					model="@load(vm.listModel)">
+					<!-- <listhead sizable="true">
+						<listheader width="100px" label="Kode"
+							sort="auto(kode)" />
+						<listheader label="Cabang" sort="auto(cabang)" />
+						<listheader label="Tanggal" sort="auto(tglJam)" />
+					</listhead> -->
+					<template name="model" var="p1">
+						<listitem>
+							<listcell label="@load(p1.kode)" />
+							<listcell
+								label="@load(p1.cabang)" />
+							<listcell label="@load(p1.tglJam)" />
+						</listitem>
+					</template>
+				</listbox>
+				
+			</panelchildren>
+		</panel>
+
+
+	</vlayout>
+
+</vlayout>

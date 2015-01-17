@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Surat_Jalan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98223c1a-ac11-4079-8234-6d769906ea8f">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="438"/>
+	<property name="ireport.y" value="922"/>
+	<queryString>
+		<![CDATA[select '1' no, '' keterangan , 'HB31E1235036' no_mesin, 'HB31106K23787' no_rangka from dual
+union all
+select '2' no, '' keterangan , 'HB31E1235329' no_mesin, 'HB31186K23776' no_rangka from dual
+union all
+select '3' no, '' keterangan , 'HB31E1235459' no_mesin, 'HB31136K23662' no_rangka from dual
+union all
+select '4' no, '' keterangan , 'HB31E1235479' no_mesin, 'HB31196K23663' no_rangka from dual]]>
+	</queryString>
+	<field name="no" class="java.lang.String"/>
+	<field name="keterangan" class="java.lang.String"/>
+	<field name="no_mesin" class="java.lang.String"/>
+	<field name="no_rangka" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[PT Trio Motor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="20" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Perintis Kemerdekaan Pasar Lama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="40" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Banjarmasin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="60" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[0511-3355500]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="10" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SURAT JALAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="44" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Nomor Faktur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="64" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Faktur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="84" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Nomor S. Jalan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="115" y="44" width="15" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="115" y="64" width="15" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="115" y="84" width="15" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="130" y="44" width="149" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[0001/FAK-MD/09/2014]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="130" y="84" width="149" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[000045/SJ-MD/09/2014]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="130" y="64" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[02-09-2014]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="307" y="44" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Kd Dlr / Dealer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="307" y="64" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="432" y="44" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[T11 / Kolonel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="417" y="44" width="11" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="417" y="64" width="11" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="307" y="86" width="235" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl Kol. Sugiono Banjarmasin]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="110" width="555" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="49fee237-d308-443f-bb02-44c969310f3a" x="0" y="4" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="054c8fc1-3ff6-431f-87e3-1b58b80a06c5" x="100" y="3" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36864df0-cb57-4989-bfe6-1f325c0e49d3" x="207" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[No Mesin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cb950b69-1f6b-4259-bde2-594d9ada03f5" x="328" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[No Rangka]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="24" width="555" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="14be01d2-974d-4d90-a185-a3ddb3413b3e" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3265f14-15ed-4608-bf14-d4a2303587d0" x="100" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df0fbb41-a780-40b4-b587-ec3c216bf004" x="207" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{no_mesin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e0646a7-ffa0-42d8-b3b0-4fcdc7e59be4" x="328" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{no_rangka}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="29" width="185" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Diserahkan dan diperiksa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="79" width="185" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Driver]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="241" y="29" width="104" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Diterima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="241" y="79" width="104" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Dealer ( T11)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="382" y="79" width="173" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Admin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="382" y="29" width="173" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Courier 10 Pitch" size="12"/>
+				</textElement>
+				<text><![CDATA[Banjarmasin,02 -09-2014]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="2" width="555" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

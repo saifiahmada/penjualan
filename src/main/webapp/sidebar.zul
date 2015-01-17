@@ -1,0 +1,29 @@
+<div id="sidebar" sclass="sidebar" apply="com.dessy.penjualan.viewmodel.SidebarComposer">
+	
+	<div class="shortcuts">
+		
+		<div class="shortcuts-expanded">
+			<button type="button" class="btn-success" iconSclass="z-icon-signal"/>
+			<button type="button" class="btn-info" iconSclass="z-icon-pencil"/>
+			<button type="button" class="btn-warning" iconSclass="z-icon-group"/>
+			<button type="button" class="btn-danger" iconSclass="z-icon-cogs"/>
+		</div>
+		
+		<div class="shortcuts-collapsed">
+			<button type="button" class="btn-success"/>
+			<button type="button" class="btn-info"/>
+			<button type="button" class="btn-warning"/>
+			<button type="button" class="btn-danger"/>
+		</div>
+	</div>
+	
+	<navbar id="navbar" sclass="nav-list" orient="vertical">
+		
+	</navbar>
+	
+	<div sclass="sidebar-collapse">
+		<a id="toggler" iconSclass="z-icon-angle-double-left"/>
+	</div>
+	
+	
+</div>

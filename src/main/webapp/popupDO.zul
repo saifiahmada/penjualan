@@ -1,0 +1,28 @@
+<zk>
+	<window title="Popup DO" mode="modal" position="center,top"
+		closable="true" width="520px" sclass="mymodal" height="520px"
+		border="normal" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.PopupDOVM')">
+
+		<separator />
+		<listbox mold="paging" pageSize="10" onSelect="@command('pilih')"
+			pagingPosition="bottom" selectedItem="@bind(vm.current)"
+			model="@load(vm.listModel)">
+			<listhead sizable="true">
+				<listheader label="No DO"
+					sort="auto(noPO)" />
+				<listheader label="Kode Dealer" sort="auto(idDealer)" />
+				<listheader label="Status"/>
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.noDo)" />
+					<listcell label="@load(p1.kdDlr)" />
+					<listcell label="@load(p1.status)" />
+				</listitem>
+			</template>
+		</listbox>
+		<separator/>
+		
+	</window>
+</zk>

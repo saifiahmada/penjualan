@@ -1,0 +1,56 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MaintainPoVM')">
+		<div sclass="page-header">
+			<label value="Maintain PO" />
+		</div>
+		<separator />
+
+		<textbox value="@bind(vm.current.noPo)" placeholder="No PO"
+			sclass="form-control" width="150px" />
+		<separator />
+		<textbox value="@bind(vm.current.idDealer)"
+			placeholder="Kode Dealer" sclass="form-control" width="150px" />
+		<separator />
+		<datebox value="@bind(vm.current.tglPo)" format="dd-MM-yyyy"
+			placeholder="Tanggal" width="150px" />
+		<separator />
+		<textbox value="@bind(vm.current.status)" placeholder="Status"
+			sclass="form-control" width="150px" />
+		<separator />
+		<hbox>
+			<button label="Cari" onClick="@command('cari')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-search" />
+			<button label="Reset" onClick="@command('reset')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-repeat" />
+		</hbox>
+
+		<separator />
+		<hbox>
+			<listbox width="400px" mold="paging" pageSize="10"
+				pagingPosition="both"
+				selectedItem="@bind(vm.current)" model="@load(vm.listModel)">
+				<listhead sizable="true">
+					<listheader width="150px" label="No PO"
+						sort="auto(noPo)" />
+					<listheader label="Dealer" sort="auto(idDealer)" />
+					<listheader label="Tgl PO" sort="auto(tglPo)" />
+					<listheader label="Status" sort="auto(status)" />
+				</listhead>
+				<template name="model" var="p1">
+					<listitem>
+						<listcell label="@load(p1.noPo)" />
+						<listcell label="@load(p1.idDealer)" />
+						<listcell label="@load(p1.tglPo)" />
+						<listcell label="@load(p1.status)" />
+					</listitem>
+				</template>
+			</listbox>
+		</hbox>
+	</vlayout>
+
+</zk>

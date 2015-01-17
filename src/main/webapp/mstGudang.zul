@@ -1,0 +1,54 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MstGudangVM')">
+		<div sclass="page-header">
+			<label value="Master Gudang" />
+		</div>
+
+		<separator />
+		<hbox>
+			<textbox value="@bind(vm.current.id)" placeholder="Id"
+				width="150px" sclass="form-control" />
+		</hbox>
+		<separator />
+		<hbox>
+			<textbox value="@bind(vm.current.namaGudang)"
+				placeholder="Nama Gudang" width="150px" sclass="form-control" />
+		</hbox>
+		<separator />
+
+		<hbox>
+			<button label="Simpan" onClick="@command('simpan')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-disk" />
+			<button label="Cari" onClick="@command('cari')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-search" />
+			<button label="Reset" onClick="@command('reset')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-repeat" />
+		</hbox>
+
+
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader label="Id" sort="auto(id)" />
+				<listheader label="Nama Gudang" sort="auto(namaGudang)" />
+
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.id)" />
+					<listcell label="@load(p1.namaGudang)" />
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Surat_Jalan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98223c1a-ac11-4079-8234-6d769906ea8f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<parameter name="NOPICKLIST" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select h.*,d.*,m.*,dlr.* from hdr_picklist h
+join dtl_picklist d on d.NOPICKLIST = h.NOPICKLIST
+join mst_item m on m.KD_ITEM = d.KD_ITEM
+join mst_dealer dlr on dlr.ID = h.KD_DLR
+where h.NOPICKLIST = $P{NOPICKLIST}]]>
+	</queryString>
+	<field name="NOPICKLIST" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LOKASI" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KD_DLR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TGL_PICK" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NO_MESIN" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KD_ITEM" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VCREABY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DCREA" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VMODIBY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DMODI" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAMA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TIPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="WARNA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALAMAT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PIMPINAN" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TELPON" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NO_NPWP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NPWP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAMA_DEALER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="NO_URUT" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{NOPICKLIST}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="0" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[PT Trio Motor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="20" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Jl. Perintis Kemerdekaan Pasar Lama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="40" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Banjarmasin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="60" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[0511-3355500]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="10" width="253" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PICKING LIST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="44" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Nomor DO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="0" y="64" width="115" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal DO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="115" y="44" width="15" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="115" y="64" width="15" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="307" y="44" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Kd Dealer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="417" y="44" width="11" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="110" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="ef4be986-8b04-44ac-a562-e5047727af98" x="130" y="44" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOPICKLIST}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="811257fc-cb2c-4fe6-9762-2297374f004c" x="130" y="64" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TGL_PICK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="00a8b829-d458-4cf4-a972-b5b4f7608352" x="428" y="44" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KD_DLR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="417" y="64" width="11" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="307" y="64" width="110" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Dealer]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="00a8b829-d458-4cf4-a972-b5b4f7608352" x="428" y="64" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAMA_DEALER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="24" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="3083781f-1fa5-4a36-8009-f24bc1ce7a29" x="231" y="2" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[NO_MESIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="093b2ac7-1622-4dc7-9604-ee248316903b" x="342" y="2" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[KD_ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3083781f-1fa5-4a36-8009-f24bc1ce7a29" x="9" y="2" width="24" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="093b2ac7-1622-4dc7-9604-ee248316903b" x="479" y="2" width="76" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[LOKASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3083781f-1fa5-4a36-8009-f24bc1ce7a29" x="98" y="0" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="bc7e2b43-2a20-4d98-895a-a4c15e80e97d" x="231" y="1" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NO_MESIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fd4a8fb0-a4fc-4e83-b5d6-baa13d11fbcd" x="342" y="1" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KD_ITEM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="093b2ac7-1622-4dc7-9604-ee248316903b" x="479" y="0" width="76" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<text><![CDATA[G13]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="bc7e2b43-2a20-4d98-895a-a4c15e80e97d" x="97" y="1" width="100" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NAMA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f389123-2e67-4046-949d-f75f24936cf8" x="8" y="0" width="33" height="20"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{NO_URUT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="11" y="29" width="104" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Diterima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="11" y="79" width="104" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Dealer ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="382" y="79" width="173" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Gudang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82532d11-3b76-4c24-95ac-d8145f276b83" x="382" y="29" width="173" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Ecofont Vera Sans" size="12"/>
+				</textElement>
+				<text><![CDATA[Diperiksa]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6de6b242-5941-4008-b248-98dc49ac9b36" x="0" y="2" width="555" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

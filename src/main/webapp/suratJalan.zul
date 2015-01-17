@@ -1,0 +1,35 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.SuratJalanVM')">
+		<div sclass="page-header">
+			<label value="Surat Jalan" />
+		</div>
+		
+		<vbox>
+			<hbox>
+				<textbox placeholder="Kode Dealer"
+					value="@bind(vm.kdDealer)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovDealer')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox><textbox placeholder="No Picking" value="@bind(vm.noPicking)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovPilihPicking')"
+				sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox><textbox placeholder="No SJ" value="@bind(vm.noSuratJalan)" sclass="form-control" readonly="true" />
+			</hbox>
+			<separator/>
+			<hbox><button label="Proses" onClick="@command('prosesSuratJalan')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Cetak" onClick="@command('cetakSJ')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-print" />
+				</hbox>
+		</vbox>
+		
+	</vlayout>
+
+</zk>

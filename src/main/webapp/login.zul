@@ -1,0 +1,48 @@
+<?page title="Login" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:x="xhtml" xmlns:zk="zk" xmlns:h="native">
+	<style src="bootstrap/css/bootstrap.min.css" />
+	<style src="bootstrap/css/login.css" />
+
+	<div apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.LoginVM')">
+
+		<div id="wrapper" sclass="centerdiv">
+
+			<x:form name="login-form" class="login-form" action=""
+				method="post">
+
+				<div class="header">
+					<image src="assets/avatars/logo.png" width="40px" height="40px"/>
+					<label value="Penjualan"
+						style="font-weight: bold; font-size: 24px" />
+					<separator />
+					<label
+						value="Sistem Informasi Penjualan Trio Motor" />
+				</div>
+
+				<div class="content">
+					<textbox sclass="form-control"
+						placeholder="Username" value="@bind(vm.userName)" height="50px"
+						focus="true" />
+					<div class="user-icon"></div>
+					<separator />
+					<textbox sclass="form-control"
+						placeholder="Password" type="password" value="@bind(vm.password)"
+						height="50px" onOK="@command('onOk')" />
+					<div class="pass-icon"></div>
+					<separator />
+					
+				</div>
+
+				<div class="footer">
+					<button sclass="btn-info btn-lg" zclass="btn"
+						label="Login" style="float : right" onClick="@command('doLogin')" />
+				</div>
+
+			</x:form>
+
+		</div>
+
+		<div class="gradient"></div>
+	</div>
+</zk>

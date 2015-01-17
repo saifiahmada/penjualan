@@ -1,0 +1,73 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.MonPembayaranVM')">
+		<div sclass="page-header">
+			<label value="Monitoring Pembayaran" />
+		</div>
+		
+		<vbox>
+			<hbox>
+				<textbox placeholder="Kode Dealer"
+					value="@bind(vm.kdDealer)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovDealer')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox>
+				<combobox value="@bind(vm.status)">
+					<comboitem value="A" label="A" ></comboitem>
+					<comboitem value="B" label="B" ></comboitem>
+					<comboitem value="C" label="C" ></comboitem>
+					
+				</combobox>
+				
+			</hbox>
+			<!-- <hbox><textbox placeholder="No DO" value="@bind(vm.noDo)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovPilihDO')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox> -->
+			<!-- <hbox><textbox placeholder="No Faktur" value="@bind(vm.noFaktur)" sclass="form-control" readonly="true" />
+			</hbox> -->
+			<separator/>
+			<hbox>
+			<button label="Cari" onClick="@command('cari')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-search" />
+			<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+			<button label="Cetak" onClick="@command('cetakPembayaran')"
+				sclass="btn-info" zclass="btn"
+				iconSclass="glyphicon glyphicon-floppy-disk" />
+				</hbox>
+		</vbox>
+		
+		<separator/>
+		
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader label="Kode Dealer" sort="auto(kdDlr)" />
+				<listheader label="NO DO" sort="auto(noDO)" />
+				<listheader label="No Faktur" sort="auto(noFaktur)" />
+				<listheader label="Harga" sort="auto(harga)" />
+				<listheader label="Status" sort="auto(status)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.kdDlr)" />
+					<listcell label="@load(p1.noDo)" />
+					<listcell label="@load(p1.noFaktur)" />
+					<listcell label="@load(p1.harga)" />
+					<listcell
+						label="@load(p1.status eq 'A' ? 'DO Approved (A)' : p1.status eq 'B' ? 'Picklist (B)' :  'Faktur (C)' )" />
+				</listitem>
+			</template>
+		</listbox>
+		
+		
+	</vlayout>
+
+</zk>

@@ -1,0 +1,44 @@
+<vlayout sclass="page-content" xmlns:n="native" spacing="0">
+
+	<vlayout apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.trio.dashboard.viewmodel.BulananCounterVM')">
+
+		<panel border="none" collapsible="true" sclass="transparent">
+			<caption iconSclass="z-icon-star orange"
+				label="Pendapatan Harian Counter Database Cabang" />
+			<panelchildren>
+				<separator />
+
+				<hbox>
+					<cell width="100px">
+						<label value="Bulan" />
+					</cell>
+					<datebox value="@bind(vm.tanggal)"
+						format="MMM-yyyy" />
+					<button label="Send" onClick="@command('submit')"
+						iconSclass="z-icon-mail-forward" sclass="btn btn-sm btn-info" />
+				</hbox>
+
+				<separator />
+				<listbox id="lb" sclass="task" mold="paging"
+					pageSize="20" pagingPosition="both" model="@load(vm.listModel)">
+					<listhead sizable="true">
+						<listheader label="Cabang" />
+						<listheader label="Total"
+							style="text-align: right;" />
+					</listhead>
+					<template name="model" var="p1">
+						<listitem sclass="task-green">
+							<listcell label="@load(p1.cabang)" />
+							<listcell
+								label="@load(p1.total) @converter('formatedNumber', format='###,##0.00')"
+								style="text-align: right;" />
+							
+						</listitem>
+					</template>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</vlayout>
+
+</vlayout>

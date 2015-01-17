@@ -1,0 +1,22 @@
+<window apply="com.trio.dashboard.viewmodel.UnitEntryVM">
+	<panel border="none" collapsible="true" sclass="transparent">
+		<caption iconSclass="z-icon-star orange"
+			label="Unit Entry Harian Database Cabang" />
+		<panelchildren>
+			<separator />
+			<hbox>
+				<cell width="100px">
+					<label value="Tanggal" />
+				</cell>
+				<datebox id="tanggal" format="dd-MM-yyyy" />
+				<button id="btnSend" label="Send"
+					iconSclass="z-icon-mail-forward" sclass="btn btn-sm btn-info" />
+			</hbox>
+			<separator />
+
+			<charts id="chart" type="column" margin="50, 50, 100, 80"
+				title="Unit Entry" />
+		</panelchildren>
+	</panel>
+</window>
+

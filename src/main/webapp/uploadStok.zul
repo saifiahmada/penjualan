@@ -1,0 +1,20 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.UploadStokVM')">
+		<div sclass="page-header">
+			<label value="Upload Stok" />
+		</div>
+
+		<vbox>
+			<hbox>
+				<fileupload label="Upload" 
+							onUpload="@command('getUploadedFile', media=event.media)" upload="true,accept=text/plain" />
+			</hbox>
+		</vbox>
+		
+		
+	</vlayout>
+
+</zk>

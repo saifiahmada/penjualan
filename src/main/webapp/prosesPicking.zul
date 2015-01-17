@@ -1,0 +1,61 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.ProsesPickingVM')">
+		<div sclass="page-header">
+			<label value="Proses Picking" />
+		</div>
+
+		<vbox>
+			<hbox>
+				<textbox placeholder="Kode Dealer"
+					value="@bind(vm.kdDealer)" sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovDealer')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<hbox>
+				<textbox placeholder="No DO" value="@bind(vm.noDo)"
+					sclass="form-control" readonly="true" />
+				<button label="LOV" onClick="@command('lovPilihDO')"
+					sclass="btn-info" zclass="btn" iconSclass="z-icon-search" />
+			</hbox>
+			<separator />
+			<hbox>
+				<button label="Proses"
+					onClick="@command('prosesPicking')" sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-floppy-disk" />
+				<button label="Reset" onClick="@command('reset')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-repeat" />
+				<button label="Cetak" onClick="@command('cetakPicking')"
+					sclass="btn-info" zclass="btn"
+					iconSclass="glyphicon glyphicon-print" />
+
+			</hbox>
+			<separator />
+			<listbox mold="paging" pageSize="10" pagingPosition="both"
+				selectedItem="@bind(vm.current2)" model="@load(vm.listModel)"
+				sclass="mylist">
+				<listhead sizable="true">
+					<listheader label="No Picklist"
+						sort="auto(dtlPicklistPK.nopicklist)" />
+					<listheader label="No Mesin"
+						sort="auto(dtlPicklistPK.noMesin)" />
+					<listheader label="Kode Item" sort="auto(kdItem)" />
+				</listhead>
+				<template name="model" var="p1">
+					<listitem>
+						<listcell
+							label="@load(p1.dtlPicklistPK.nopicklist)" />
+						<listcell
+							label="@load(p1.dtlPicklistPK.noMesin)" />
+						<listcell label="@load(p1.kdItem)" />
+					</listitem>
+				</template>
+			</listbox>
+		</vbox>
+
+	</vlayout>
+
+</zk>

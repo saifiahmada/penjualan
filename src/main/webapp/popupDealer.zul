@@ -1,0 +1,25 @@
+<zk>
+	<window title="Popup Dealer" mode="modal" position="center,top"
+		closable="true" width="520px" sclass="mymodal" height="520px"
+		border="normal" apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.PopupDealerVM')">
+
+		<separator />
+		<listbox mold="paging" pageSize="10" onSelect="@command('pilih')"
+			pagingPosition="bottom" selectedItem="@bind(vm.current)"
+			model="@load(vm.listModel)">
+			<listhead sizable="true">
+				<listheader label="Kd Dealer" sort="auto(noPO)" />
+				<listheader label="Nama" sort="auto(namaDealer)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.id)" />
+					<listcell label="@load(p1.namaDealer)" />
+				</listitem>
+			</template>
+		</listbox>
+		<separator/>
+		
+	</window>
+</zk>

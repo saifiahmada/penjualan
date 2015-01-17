@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.dessy.penjualan.bean.MstAccessRole</value>
+				<value>com.dessy.penjualan.bean.MstMenu</value>
+				<value>com.dessy.penjualan.bean.MstRole</value>
+				<value>com.dessy.penjualan.bean.MstUser</value>
+				<value>com.dessy.penjualan.bean.MstUserRole</value>
+				<value>com.dessy.penjualan.bean.MstDealer</value>
+				<value>com.dessy.penjualan.bean.StokDetail</value>
+				<value>com.dessy.penjualan.bean.StokGlobal</value>
+				<value>com.dessy.penjualan.bean.MstItem</value>
+				<value>com.dessy.penjualan.bean.HdrPo</value>
+				<value>com.dessy.penjualan.bean.DtlPo</value>
+				<value>com.dessy.penjualan.bean.HdrDo</value>
+				<value>com.dessy.penjualan.bean.DtlDo</value>
+				<value>com.dessy.penjualan.bean.MstHarga</value>
+				<value>com.dessy.penjualan.bean.MstRunnum</value>
+				<value>com.dessy.penjualan.bean.HdrPicklist</value>
+				<value>com.dessy.penjualan.bean.DtlPicklist</value>
+				<value>com.dessy.penjualan.bean.HdrSuratJalan</value>
+				<value>com.dessy.penjualan.bean.DtlSuratJalan</value>
+				<value>com.dessy.penjualan.bean.MstGudang</value>
+				<value>com.dessy.penjualan.bean.Pendapatan</value>
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

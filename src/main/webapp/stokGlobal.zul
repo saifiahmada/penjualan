@@ -1,0 +1,31 @@
+<zk>
+
+	<vlayout sclass="page-content" xmlns:n="native" spacing="0"
+		apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm') @init('com.dessy.penjualan.viewmodel.StokGlobalVM')">
+		<div sclass="page-header">
+			<label value="Stok Global" />
+		</div>
+
+		
+		<separator />
+		<listbox mold="paging" pageSize="10" pagingPosition="both"
+			selectedItem="@bind(vm.current)" model="@load(vm.listModel)"
+			sclass="mylist">
+			<listhead sizable="true">
+				<listheader label="Kode Item" sort="auto(kdItem)" />
+				<listheader label="Lokasi" sort="auto(lokasi)" />
+				<listheader label="Qty" sort="auto(qty)" />
+			</listhead>
+			<template name="model" var="p1">
+				<listitem>
+					<listcell label="@load(p1.kdItem)" />
+					<listcell label="@load(p1.lokasi)" />
+					<listcell label="@load(p1.qty)" />
+				</listitem>
+			</template>
+		</listbox>
+
+	</vlayout>
+
+</zk>
